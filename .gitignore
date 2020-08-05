@@ -10,7 +10,7 @@ _webpackOutput
 
 /metadata.toml
 
-
+*.lock
 # Phenomic things
 
 *.bundle.js
