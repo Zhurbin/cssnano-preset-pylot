@@ -59,8 +59,6 @@ var _postcssNormalizeDisplayValues = _interopRequireDefault(require("postcss-nor
 
 var _postcssNormalizeTimingFunctions = _interopRequireDefault(require("postcss-normalize-timing-functions"));
 
-var _cssnanoUtils = require("cssnano-utils");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
@@ -77,6 +75,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * this preset require only minimal configuration.
  */
 // import postcssOrderedValues from 'lerna:postcss-ordered-values';
+// import { rawCache } from 'lerna:cssnano-utils';
 const defaultOpts = {
   convertValues: {
     length: false
@@ -92,7 +91,8 @@ const defaultOpts = {
 function defaultPreset(opts = {}) {
   const options = Object.assign({}, defaultOpts, opts);
   const plugins = [[_postcssDiscardComments.default, options.discardComments], [_postcssMinifyGradients.default, options.minifyGradients], [_postcssReduceInitial.default, options.reduceInitial], [_postcssSvgo.default, options.svgo], [_postcssNormalizeDisplayValues.default, options.normalizeDisplayValues], [_postcssReduceTransforms.default, options.reduceTransforms], [_postcssColormin.default, options.colormin], [_postcssNormalizeTimingFunctions.default, options.normalizeTimingFunctions], [_postcssCalc.default, options.calc], [_postcssConvertValues.default, options.convertValues], // [postcssOrderedValues, options.orderedValues],
-  [_postcssMinifySelectors.default, options.minifySelectors], [_postcssMinifyParams.default, options.minifyParams], [_postcssNormalizeCharset.default, options.normalizeCharset], [_postcssDiscardOverridden.default, options.discardOverridden], [_postcssNormalizeString.default, options.normalizeString], [_postcssNormalizeUnicode.default, options.normalizeUnicode], [_postcssMinifyFontValues.default, options.minifyFontValues], [_postcssNormalizeUrl.default, options.normalizeUrl], [_postcssNormalizeRepeatStyle.default, options.normalizeRepeatStyle], [_postcssNormalizePositions.default, options.normalizePositions], [_postcssNormalizeWhitespace.default, options.normalizeWhitespace], [_postcssMergeLonghand.default, options.mergeLonghand], [_postcssDiscardDuplicates.default, options.discardDuplicates], [_postcssMergeRules.default, options.mergeRules], [_postcssDiscardEmpty.default, options.discardEmpty], [_postcssUniqueSelectors.default, options.uniqueSelectors], [_cssDeclarationSorter.default, options.cssDeclarationSorter], [_cssnanoUtils.rawCache, options.rawCache]];
+  [_postcssMinifySelectors.default, options.minifySelectors], [_postcssMinifyParams.default, options.minifyParams], [_postcssNormalizeCharset.default, options.normalizeCharset], [_postcssDiscardOverridden.default, options.discardOverridden], [_postcssNormalizeString.default, options.normalizeString], [_postcssNormalizeUnicode.default, options.normalizeUnicode], [_postcssMinifyFontValues.default, options.minifyFontValues], [_postcssNormalizeUrl.default, options.normalizeUrl], [_postcssNormalizeRepeatStyle.default, options.normalizeRepeatStyle], [_postcssNormalizePositions.default, options.normalizePositions], [_postcssNormalizeWhitespace.default, options.normalizeWhitespace], [_postcssMergeLonghand.default, options.mergeLonghand], [_postcssDiscardDuplicates.default, options.discardDuplicates], [_postcssMergeRules.default, options.mergeRules], [_postcssDiscardEmpty.default, options.discardEmpty], [_postcssUniqueSelectors.default, options.uniqueSelectors], [_cssDeclarationSorter.default, options.cssDeclarationSorter] // [rawCache, options.rawCache],
+  ];
   return {
     plugins
   };
